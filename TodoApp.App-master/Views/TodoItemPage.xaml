@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="TodoApp.Views.TodoItemPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    Title="{Binding Name}"
+    BackgroundImageSource="background.png">
+    <ContentPage.Content>
+        
+        
+        <StackLayout
+            Margin="20"
+            Spacing="10"
+            VerticalOptions="StartAndExpand">
+
+            <Label Text="Nome" />
+            <Entry Text="{Binding Name}" BackgroundColor="AliceBlue" Opacity="0.7" TextColor="Black" MaxLength="30"/>
+
+            <Label Text="Descrição" />
+            <Entry Text="{Binding Notes}" Margin="0,0,0,20" BackgroundColor="AliceBlue" Opacity="0.7" TextColor="Black" MaxLength="200"/>
+
+            <Button Clicked="OnSaveClicked" Text="Save" BackgroundColor="Blue"/>
+
+            <Button Clicked="OnDeleteClicked" Text="Delete" BackgroundColor="Blue"/>
+
+            <Button Clicked="OnCancelClicked" Text="Cancel" BackgroundColor="Blue"/>
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
