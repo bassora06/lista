@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SQLite;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -11,6 +12,8 @@ namespace TodoApp.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class TodoListPage : ContentPage
     {
+        static SQLiteAsyncConnection Database;
+
         public TodoListPage()
         {
             InitializeComponent();
@@ -41,5 +44,14 @@ namespace TodoApp.Views
                 });
             }
         }
+
+        async void OnDeleteClicked(object sender, EventArgs e)
+        {
+            var todoItem = (TodoItem)BindingContext;
+            TodoItemDatabase database = await TodoItemDatabase.Instance;
+            await database.DeleteItemAsync(todoItem);
+            await Navigation.PopAsync();
+        }
+
     }
 }

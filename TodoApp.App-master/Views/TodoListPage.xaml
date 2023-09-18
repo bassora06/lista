@@ -10,7 +10,7 @@
         <ToolbarItem Clicked="OnItemAdded" Text="+">
             <ToolbarItem.IconImageSource>
                 <OnPlatform x:TypeArguments="ImageSource">
-                    <On Platform="Android,UWP" Value="plus.png" />
+                    <On Platform="Android,UWP" Value="plus.png" /> 
                 </OnPlatform>
             </ToolbarItem.IconImageSource>
         </ToolbarItem>
@@ -29,7 +29,14 @@
                         Orientation="Horizontal"
                         BackgroundColor="AliceBlue"
                         HeightRequest="40">
-                        <CheckBox Margin="20,0,0,0"/>
+                        <ImageButton 
+                            HorizontalOptions="End"
+                            Source="lixeira.png"
+                            HeightRequest="35"
+                            VerticalOptions="Center"
+                            Margin="20,0,10,0"
+                            BackgroundColor="AliceBlue"
+                            Clicked="OnDeleteClicked"/>
                         <Label HorizontalOptions="StartAndExpand" VerticalOptions="Center" Text="{Binding Name}" />
                     </StackLayout>
                 </ViewCell>

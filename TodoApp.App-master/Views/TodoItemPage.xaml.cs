@@ -19,13 +19,6 @@ namespace TodoApp.Views
             await Navigation.PopAsync();
         }
 
-        async void OnDeleteClicked(object sender, EventArgs e)
-        {
-            var todoItem = (TodoItem)BindingContext;
-            TodoItemDatabase database = await TodoItemDatabase.Instance;
-            await database.DeleteItemAsync(todoItem);
-            await Navigation.PopAsync();
-        }
 
         async void OnCancelClicked(object sender, EventArgs e)
         {
